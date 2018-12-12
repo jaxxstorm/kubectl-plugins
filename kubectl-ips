@@ -1,0 +1,3 @@
+#!/bin/bash
+
+kubectl get nodes -o custom-columns=NAME:.metadata.name,IP:".status.addresses[0].address",ROLE:".metadata.labels['kubernetes\.io/role']" "$@"
